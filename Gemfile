@@ -22,6 +22,9 @@ source 'https://rubygems.org' do
   gem 'rails_admin',                    '0.7.0'
   gem 'sass-rails',                     '5.0.3'
   gem 'uglifier',                       '2.7.1'
+  gem 'sqlite3'
+  gem 'omniauth'
+  gem 'omniauth-facebook'
 
   group :development, :test do
     gem 'binding_of_caller', '0.7.2'
