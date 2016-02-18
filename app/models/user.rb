@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :confirmable, :lockable, :timeoutable, :omniauthable,
          omniauth_providers: [:facebook]
 
+  has_many :user_lessons
+  has_many :lessons, through: :user_lessons
+
   def self.from_omniauth(auth)
     where(provider: auth['provider'], uid: auth['uid']).first_or_create do |user|
       user.provider = auth['provider']
