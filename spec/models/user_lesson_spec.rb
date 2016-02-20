@@ -1,5 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UserLesson, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe UserLesson do
+  it { is_expected.to respond_to(:user_id) }
+  it { is_expected.to respond_to(:lesson_id) }
 end
