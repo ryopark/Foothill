@@ -1,0 +1,14 @@
+<h1>Classes</h1>
+
+<table border="3">
+  <tr>
+    <th>class name</th>
+    <th>professor</th>
+  </tr>
+  <% @lessons.each do |lesson| %>
+  <tr>
+    <td><%= lesson.name %></td>
+    <td><%= lesson.prof_name %></td>
+    <% end %>
+  </tr>
+</table>
