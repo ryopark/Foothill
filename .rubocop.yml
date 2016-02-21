@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - vendor/**/*
+  RunRailsCops: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+
+Metrics/LineLength:
+  Enabled: false
