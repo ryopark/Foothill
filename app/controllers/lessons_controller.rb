@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
+    @q = Lesson.search(params[:q])
+    @lessons = @q.result(distinct: true)
   end
 
   def show

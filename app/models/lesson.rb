@@ -3,4 +3,6 @@ class Lesson < ActiveRecord::Base
   validates :in_class, inclusion: { in: [true, false] }
   has_many :user_lessons
   has_many :users, through: :user_lessons
+
+
 end
