@@ -1,10 +1,10 @@
 <h1>Search books from class</h1>
 <%= search_form_for @q do |f| %>
-    <%= f.label :name_start, "book" %>
+    <%= f.label :name_start, 'book' %>
     <%= f.search_field :name_start %>
-    <%= f.label :prof_name_start, "professor" %>
+    <%= f.label :prof_name_start, 'professor' %>
     <%= f.search_field :prof_name_start %>
-    <%= f.label :class_name_start, "class_name" %>
+    <%= f.label :class_name_start, 'class_name' %>
     <%= f.search_field :class_name_start %>
     <%# search! %>
     <%= f.submit %>
@@ -17,7 +17,7 @@
         <th><%= sort_link(@q, :prof_name_start) %></th>
         <th><%= sort_link(@q, :class_name_start) %></th>
         <th><%= sort_link(@q, :price_start) %></th>
-        <th colspan="3"></th>
+        <th colspan='3'></th>
       </tr>
     </thead>
 
