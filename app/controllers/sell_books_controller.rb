@@ -1,4 +1,6 @@
 class SellBooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @q = SellBook.search(params[:q])
     @books = @q.result(distinct: true)
@@ -9,20 +11,20 @@ class SellBooksController < ApplicationController
   end
 
   def new
-    @book = SellBook.new
+    @book = current_user.sell_books.build
   end
 
   def create
-    @book = SellBook.new(sell_book_params)
-    @book.user_id = current_user.id
+    @book = current_user.sell_books.build(sell_book_params)
     if @book.save
-      redirect_to @book, notice: "you done"
+      redirect_to @book, notice: 'you done'
     else
       render 'new'
     end
   end
 
-private
+  private
+  
   def sell_book_params
     params.require(:sell_book).permit(:name, :class_name, :prof_name, :price, :user_id)
   end

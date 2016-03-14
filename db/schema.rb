@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160314023754) do
 
-  create_table "search_bases", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "search_lessons", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "sell_books", force: :cascade do |t|
     t.string   "name",       default: "",   null: false
     t.string   "prof_name",  default: "",   null: false
