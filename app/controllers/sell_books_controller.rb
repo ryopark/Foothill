@@ -19,12 +19,12 @@ class SellBooksController < ApplicationController
     if @book.save
       redirect_to @book, notice: 'you done'
     else
-      render 'new'
+      render :new
     end
   end
 
   private
-  
+
   def sell_book_params
     params.require(:sell_book).permit(:name, :class_name, :prof_name, :price, :user_id)
   end
