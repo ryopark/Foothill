@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
-  root to: 'users#index'
+  root to: 'top#index'
+
+  resources :top, only: [:index]
 
   resources :users
 
