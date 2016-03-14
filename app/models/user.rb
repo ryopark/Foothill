@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable,
          omniauth_providers: [:facebook]
-  has_many :sell_books
+  has_many :sell_books, dependent: :destroy
 
   validates :email, presence: true
 
