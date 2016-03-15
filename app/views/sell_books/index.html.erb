@@ -17,6 +17,7 @@
         <th><%= sort_link(@q, :prof_name, 'Professor') %></th>
         <th><%= sort_link(@q, :class_name, 'Class') %></th>
         <th><%= sort_link(@q, :price, 'Price') %></th>
+        <th>Picture</th>
         <th colspan='3'></th>
       </tr>
     </thead>
@@ -28,6 +29,7 @@
           <td><%= book.prof_name %></td>
           <td><%= book.class_name %></td>
           <td><%= book.price %></td>
+          <td><%= image_tag book.image.thumb.url %></td>
         </tr>
       <% end %>
     </tbody>

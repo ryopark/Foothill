@@ -26,6 +26,6 @@ class SellBooksController < ApplicationController
   private
 
   def sell_book_params
-    params.require(:sell_book).permit(:name, :class_name, :prof_name, :price, :user_id)
+    params.require(:sell_book).permit(:name, :class_name, :prof_name, :price, :user_id, :image)
   end
 end

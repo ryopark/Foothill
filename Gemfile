@@ -26,6 +26,9 @@ source 'https://rubygems.org' do
   gem 'omniauth'
   gem 'omniauth-facebook'
   gem 'ransack'
+  gem 'carrierwave'
+  gem 'rmagick'
+
 
   group :development, :test do
     gem 'binding_of_caller', '0.7.2'
