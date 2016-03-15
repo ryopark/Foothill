@@ -1,26 +1,31 @@
 <%= form_for @book do |f| %>
 
-  <div class="field">
-    <%= f.label :name, "book name" %>
+  <div class='field'>
+    <%= f.label :name, 'book name' %>
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :class_name, "class name" %>
+  <div class='field'>
+    <%= f.label :class_name, 'class name' %>
     <%= f.text_field :class_name %>
   </div>
 
-  <div class="field">
-    <%= f.label :prof_name, "prof name" %>
+  <div class='field'>
+    <%= f.label :prof_name, 'prof name' %>
     <%= f.text_field :prof_name %>
   </div>
 
-  <div class="field">
-    <%= f.label :price, "price" %>
+  <div class='field'>
+    <%= f.label :price, 'price' %>
     <%= f.number_field :price %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "submit" %>
+  <div class='field'>
+    <%= f.label :image, 'picture of a book' %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class='actions'>
+    <%= f.submit 'submit' %>
   </div>
 <% end %>

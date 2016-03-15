@@ -28,6 +28,7 @@
           <td><%= book.prof_name %></td>
           <td><%= book.class_name %></td>
           <td><%= book.price %></td>
+          <td><%= image_tag book.image.url(:thumb) %></td>
         </tr>
       <% end %>
     </tbody>
