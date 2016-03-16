@@ -21,8 +21,10 @@
   </div>
 
   <div class='field'>
-    <%= f.label :image, 'picture of a book' %>
-    <%= f.file_field :image %>
+    <%= f.fields_for :photos do |p|%>
+      <%= p.label :image, 'picture of a book' %>
+      <%= p.file_field :image %>
+    <% end %>
   </div>
 
   <div class='actions'>

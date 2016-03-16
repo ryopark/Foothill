@@ -2,6 +2,6 @@
 <h2><%= @book.prof_name %></h2>
 <h2><%= @book.class_name %></h2>
 <h2><%= @book.price %></h2>
-<h2><%= image_tag @book.image.url(:thumb) %></h2>
+<h2><%= image_tag @book_image.image.url(:thumb) %></h2>
 
 <%= link_to 'list of books', sell_books_path %>
