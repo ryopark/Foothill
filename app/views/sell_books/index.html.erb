@@ -23,12 +23,15 @@
 
     <tbody>
       <% @books.each do |book| %>
-        <tr>
-          <td><%= book.name %></td>
-          <td><%= book.prof_name %></td>
-          <td><%= book.class_name %></td>
-          <td><%= book.price %></td>
-        </tr>
+        <% book.photos.each do |p| %>
+          <tr>
+            <td><%= book.name %></td>
+            <td><%= book.prof_name %></td>
+            <td><%= book.class_name %></td>
+            <td><%= book.price %></td>
+            <td><%= image_tag p.image.url(:thumb) %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
