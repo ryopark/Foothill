@@ -34,4 +34,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  Devise.setup do |config|
+    config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+    config.omniauth :facebook, '1521865718109269', '212b63905a0a7587127124ad76137dfb', :scope => 'email', :display => 'popup'
+  end
 end
