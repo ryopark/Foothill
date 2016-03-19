@@ -1,5 +1,5 @@
 class OmniauthCallbacksController < ApplicationController
-  def all
+  def facebook
     @user = User.find_for_facebook_oauth(request.env['omniauth.auth'].except('extra'))
 
     if @user.persisted?
@@ -10,6 +10,4 @@ class OmniauthCallbacksController < ApplicationController
       redirect_to new_user_registration_url
     end
   end
-
-  alias_method :facebook, :all
 end
