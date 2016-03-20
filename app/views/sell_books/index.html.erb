@@ -2,12 +2,6 @@
   <%= render 'search' %>
 </div>
 
-<div class='post_book text-center'>
-  <%= link_to new_sell_book_path, class: 'btn btn-default' do %>
-    Post Book
-  <% end %>
-</div>
-
 <ul class='list'>
   <% @books.each do |book| %>
   <div class='book_list'>
