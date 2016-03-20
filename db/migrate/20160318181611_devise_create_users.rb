@@ -24,6 +24,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :password
       t.string :email
+      t.string :school_name
 
 
       ## Confirmable

@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160320051903) do
     t.string   "provider"
     t.string   "password"
     t.string   "email"
+    t.string   "school_name"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
   end
