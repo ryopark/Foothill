@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DeviseQiita</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1 user-scalable=no'>
+  <title>Foothill</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <header>
-        <nav>
-            <% if user_signed_in? %>
-                <strong<%= link_to current_user.name, user_path(current_user) %></strong>
-                <%= link_to 'user page', users_path %>
-                <%= link_to 'change profile', edit_user_registration_path %>
-                <%= link_to 'logout', destroy_user_session_path %>
-            <% else %>
-                <%= link_to 'Top', root_path %>
-                <%= link_to 'Sign up / Login', new_user_registration_path %>
-            <% end %>
-        </nav>
-    </header>
+  <header>
+    <h1 class='top_title text-left'><%= link_to 'Top', root_path %></h1>
+    <% if user_signed_in? %>
+      <div class='signout_path text-left'>
+        <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-default' %>
+      </div>
+    <% else %>
+      <div class='signup_path text-left'>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default' %>
+      </div>
+    <% end %>
+  </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
 <%= yield %>
 

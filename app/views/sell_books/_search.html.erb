@@ -1,0 +1,18 @@
+<%= search_form_for @q do |f| %>
+  <form class='form-inline'>
+    <div class='form-group col-xs-3 col-md-2 book_name_keyword'>
+      <%= f.search_field :name_start, class: 'form-control', placeholder: 'Book' %>
+    </div>
+    <div class='form-group col-xs-3 col-md-2 professor_keyword'>
+      <%= f.search_field :prof_name_start, class: 'form-control', placeholder: 'Professor' %>
+    </div>
+    <div class='form-group col-xs-3 col-md-2 class_name_keyword'>
+      <%= f.search_field :class_name_start, class: 'form-control', placeholder: 'Class' %>
+    </div>
+    <div class='col-xs-1 search_button row'>
+      <%= button_tag type: 'submit', class: 'btn btn-default' do %>
+        <i class='fa fa-search'></i>
+      <% end %>
+    </div>
+  </form>
+<% end %>

@@ -1,0 +1,55 @@
+@import 'bootstrap';
+@import 'settings';
+
+.foothill_flag {
+  padding-left: 10px;
+}
+
+.header_search_form {
+  margin-top: -10px;
+  margin-left: 10px;
+
+  .book_name_keyword {
+    padding: 0 0 5px 0;
+  }
+
+  .professor_keyword {
+    padding: 0 0 5px 0;
+  }
+
+  .class_name_keyword {
+    padding: 0 0 5px 0
+  }
+
+  .search_button {
+    padding: 0 5px 5px 10px;
+  }
+}
+
+.book_list {
+  text-align: left;
+  margin-bottom: 0;
+  border: none;
+  border-bottom: 1px solid $light_gray;
+  box-shadow: none;
+
+  .list_body {
+    font-size: 14px;
+    padding: 0;
+    height: 90px;
+    line-height: 46px;
+    overflow: hidden;
+
+    a {
+      color: $dark_gray;
+      display: block;
+    }
+  }
+
+  .book_image {
+    border-radius: 3px;
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+  }
+}
