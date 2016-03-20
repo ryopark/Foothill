@@ -30,7 +30,7 @@ RSpec.describe SellBooksController do
   end
 
   describe 'POST create' do
-    let(:valid_attr) { { name: 'Japanese', class_name: 'abc', prof_name: 'michael', price: 100_00 } }
+    let(:valid_attr) { { name: 'Japanese', class_name: 'abc', prof_name: 'michael', price: 100_00, deanza_flag: true, foothill_flag: true } }
 
     context 'when current_user is login user' do
       before { login_user current_user }
