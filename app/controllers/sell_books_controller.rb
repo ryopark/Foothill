@@ -13,7 +13,6 @@ class SellBooksController < ApplicationController
 
   def new
     @book = current_user.sell_books.build
-    @book.photos.build
   end
 
   def create
