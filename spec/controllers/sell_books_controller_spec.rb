@@ -20,13 +20,6 @@ RSpec.describe SellBooksController do
         expect(assigns(:book)).to be_a_new(SellBook)
       end
     end
-
-    context 'when current_user is not login user' do
-      it 'redirects to login page' do
-        get :new
-        expect(response).to redirect_to user_session_path
-      end
-    end
   end
 
   describe 'POST create' do
@@ -57,13 +50,6 @@ RSpec.describe SellBooksController do
           post :create, sell_book: invalid_attr
           expect(response).to render_template(:new)
         end
-      end
-    end
-
-    context 'when current_user is not login user' do
-      it 'rediects to login page' do
-        post :create, sell_book: valid_attr
-        expect(response).to redirect_to(user_session_path)
       end
     end
   end
