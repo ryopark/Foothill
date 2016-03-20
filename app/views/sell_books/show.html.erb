@@ -3,5 +3,11 @@
 <h2><%= @book.class_name %></h2>
 <h2><%= @book.price %></h2>
 <h2><%= image_tag @book_image.image.url(:thumb) %></h2>
+<% if @book.deanza_flag %>
+  for deanza
+<% end %>
+<% if @book.foothill_flag %>
+  for foothill
+<% end %>
 
 <%= link_to 'list of books', sell_books_path %>

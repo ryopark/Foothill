@@ -21,6 +21,16 @@
   </div>
 
   <div class='field'>
+    <%= f.label :deanza_flag, 'de anza' %>
+    <%= f.check_box :deanza_flag %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :foothill_flag, 'foothill' %>
+    <%= f.check_box :foothill_flag %>
+  </div>
+
+  <div class='field'>
     <%= f.fields_for :photos do |p|%>
       <%= p.label :image, 'picture of a book' %>
       <%= p.file_field :image %>
