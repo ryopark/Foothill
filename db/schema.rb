@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320051903) do
+ActiveRecord::Schema.define(version: 20160323122807) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "imageable_id"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20160320051903) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "sell_book_comments", force: :cascade do |t|
+    t.integer  "sell_book_id", null: false
+    t.integer  "user_id",      null: false
+    t.text     "body",         null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "sell_book_comments", ["sell_book_id"], name: "index_sell_book_comments_on_sell_book_id"
+  add_index "sell_book_comments", ["user_id"], name: "index_sell_book_comments_on_user_id"
 
   create_table "sell_books", force: :cascade do |t|
     t.string   "name",               default: "",    null: false

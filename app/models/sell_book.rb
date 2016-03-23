@@ -1,6 +1,7 @@
 class SellBook < ActiveRecord::Base
   belongs_to :user, required: true
   has_many :photos, as: :imageable
+  has_many :sell_book_comments, dependent: :destroy
 
   validates :name, :prof_name, presence: true
   validates :in_class, inclusion: { in: [true, false] }

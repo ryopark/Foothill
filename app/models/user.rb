@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :registerable, :trackable,
          :timeoutable, :omniauthable, omniauth_providers: [:facebook]
   has_many :sell_books, dependent: :destroy
+  has_many :sell_book_comments, dependent: :destroy
 
   validates :email, presence: true
 
