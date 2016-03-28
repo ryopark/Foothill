@@ -1,12 +1,52 @@
-<h1><%= @book.name %></h1>
-<h2><%= @book.description %></h2>
-<h2><%= @book.prof_name %></h2>
-<h2><%= @book.class_name %></h2>
-<h2><%= @book.price %></h2>
-<h2><%= image_tag @book_image.image.url(:thumb) %></h2>
-<% if @book.deanza_flag %>
-  for deanza
-<% end %>
-<% if @book.foothill_flag %>
-  for foothill
-<% end %>
+<div class='book'>
+  <div class='image'>
+    <center><%= image_tag @book.photos.first.image.url, class: 'img-responsive' %></center>
+  </div>
+
+  <dl>
+    <dt>BookName:</dt>
+    <dd>
+      <%= @book.name %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>Description:</dt>
+    <dd>
+      <%= @book.description %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>ProfessorName:</dt>
+    <dd>
+      <%= @book.prof_name %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>ClassName:</dt>
+    <dd>
+      <%= @book.class_name %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>Price:</dt>
+    <dd>
+      $<%= @book.price %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>College:</dt>
+    <dd>
+      <% if @book.deanza_flag %>
+        Deanza
+      <% end %>
+      <% if @book.foothill_flag %>
+        Foothill
+      <% end %>
+    </dd>
+  </dl>
+</div>
