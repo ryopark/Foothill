@@ -20,6 +20,21 @@
  @import 'settings';
  @import 'font-awesome';
 
+ dl {
+    margin: 15px 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+
+    dt {
+      color: #555555;
+      padding-bottom: 5px;
+    }
+
+    dd {
+      color: #696969;
+    }
+ }
+
  .top_title {
    margin-left: 10px;
    a {
