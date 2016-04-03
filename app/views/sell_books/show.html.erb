@@ -50,3 +50,19 @@
     </dd>
   </dl>
 </div>
+
+<ul class='comment_list'>
+  <% @sell_book_comments.each do |comment| %>
+    <li>
+      <%= comment.user.name %>
+      <%= comment.body %>
+    </li>
+  <% end %>
+</ul>
+
+<div class='footer text-center'>
+  <%= form_for @sell_book_comment, url: sell_book_comments_path(sell_book_id: @book.id) do |f| %>
+    <%= f.text_field :body, placeholder: 'Enter comment' %>
+    <%= f.submit 'Post', class: 'btn btn-default' %>
+  <% end %>
+</div>
