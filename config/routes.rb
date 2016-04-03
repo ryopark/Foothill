@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :sell_books, except: [:edit, :update, :destroy]
-  resources :sell_book_comments, only: :create
+  resources :sell_book_comments, only: [:new, :create]
 
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new', as: :new_user_session

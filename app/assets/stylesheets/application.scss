@@ -20,6 +20,12 @@
  @import 'settings';
  @import 'font-awesome';
 
+ .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+ }
+
  dl {
     margin: 15px 10px;
     border-bottom: 1px solid #eee;

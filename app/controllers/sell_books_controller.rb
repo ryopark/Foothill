@@ -9,6 +9,8 @@ class SellBooksController < ApplicationController
   def show
     @book = SellBook.find(params[:id])
     @book_image = @book.photos.first
+    @sell_book_comments = @book.sell_book_comments.order(:id)
+    @sell_book_comment = @book.sell_book_comments.build
   end
 
   def new
