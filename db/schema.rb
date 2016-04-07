@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323131117) do
+ActiveRecord::Schema.define(version: 20160407140305) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "imageable_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160323131117) do
     t.boolean  "deanza_flag",        default: false
     t.boolean  "foothill_flag",      default: false
     t.text     "description"
+    t.string   "sell_season",        default: "",    null: false
   end
 
   create_table "user_lessons", force: :cascade do |t|
