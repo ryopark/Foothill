@@ -20,6 +20,29 @@
  @import 'settings';
  @import 'font-awesome';
 
+ ul {
+   list-style: none;
+
+   .user_name {
+     font-size: 15px;
+     font-weight: bold;
+   }
+
+   .comment_body {
+     color: $dark_gray;
+     margin-left: 55px;
+     margin-top: -10px;
+   }
+
+   li {
+     margin-bottom: 25px;
+   }
+ }
+
+ .user_image {
+   border-radius: 33px;
+ }
+
  .footer {
     position: fixed;
     bottom: 0;
