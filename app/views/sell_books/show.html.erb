@@ -54,8 +54,13 @@
 <ul class='comment_list'>
   <% @sell_book_comments.each do |comment| %>
     <li>
-      <%= comment.user.name %>
-      <%= comment.body %>
+      <%= image_tag comment.user.photo.image(:thumb), class: 'user_image' %>
+      <span class='user_name'>
+        <%= comment.user.name %>
+      </span>
+      <div class='comment_body'>
+        <%= comment.body %>
+      </div>
     </li>
   <% end %>
 </ul>
