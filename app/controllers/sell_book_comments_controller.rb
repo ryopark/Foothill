@@ -9,7 +9,7 @@ class SellBookCommentsController < ApplicationController
     @sell_book = SellBook.find(params[:sell_book_id])
     @sell_book_comment = @sell_book.sell_book_comments.build(sell_book_comment_params)
     if @sell_book_comment.save
-      redirect_to @sell_book, notice: 'Posted comment'
+      redirect_to @sell_book, notice: 'Successfully sent comment'
     else
       render :new, sell_book_id: @sell_book.id
     end

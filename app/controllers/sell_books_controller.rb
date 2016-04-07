@@ -20,7 +20,7 @@ class SellBooksController < ApplicationController
   def create
     @book = current_user.sell_books.build(sell_book_params)
     if @book.save
-      redirect_to @book, notice: 'you completely registered your book!'
+      redirect_to @book, notice: 'Completely registered your book!'
     else
       render :new
     end
