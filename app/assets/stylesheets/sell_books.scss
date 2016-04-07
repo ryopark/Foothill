@@ -39,6 +39,18 @@
     }
 
     .owner_name {
+      h4 {
+        margin-top: 30px;
+        margin-bottom: -2px;
+        color: rgba(60,63,64,0.9);
+      }
+
+      span {
+        color: $dark_gray;
+      }
+    }
+
+    .owner_name {
       margin-bottom: 40px;
     }
   }

@@ -9,8 +9,6 @@
       <%= link_to book do %>
         <%= image_tag book.photos.first.image.url(:thumb), class: 'book_image f_left' %>
         <%= book.name %>
-        <%= book.prof_name %>
-        <%= book.class_name %>
         $<%= book.price %>
       <% end %>
     </div>

@@ -13,13 +13,14 @@
 
   <div class='row'>
     <div class='description text-center'>
-      <h4>About this text book</h4>
+      <h4>About this book</h4>
       <p><%= @book.description %></p>
     </div>
 
     <div class='owner_name text-center'>
+      <h4>Owner</h4>
       <%= image_tag @book.user.photo.image(:thumb), class: 'owner_image' %>
-      <%= @book.user.name %>
+      <span><%= @book.user.name %></span>
     </div>
 
     <hr>
