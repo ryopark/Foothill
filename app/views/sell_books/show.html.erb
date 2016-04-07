@@ -3,52 +3,53 @@
     <center><%= image_tag @book.photos.first.image.url, class: 'img-responsive' %></center>
   </div>
 
-  <dl>
-    <dt>BookName:</dt>
-    <dd>
-      <%= @book.name %>
-    </dd>
-  </dl>
+  <h1 class='book_name text-center'>
+    <%= @book.name %>
+  </h1>
 
-  <dl>
-    <dt>Description:</dt>
-    <dd>
-      <%= @book.description %>
-    </dd>
-  </dl>
+  <div class='book_price'>
+    $<%= @book.price %>
+  </div>
 
-  <dl>
-    <dt>ProfessorName:</dt>
-    <dd>
-      <%= @book.prof_name %>
-    </dd>
-  </dl>
+  <div class='row'>
+    <div class='description text-center'>
+      <h4>About this text book</h4>
+      <p><%= @book.description %></p>
+    </div>
 
-  <dl>
-    <dt>ClassName:</dt>
-    <dd>
-      <%= @book.class_name %>
-    </dd>
-  </dl>
+    <div class='owner_name text-center'>
+      <%= image_tag @book.user.photo.image(:thumb), class: 'owner_image' %>
+      <%= @book.user.name %>
+    </div>
 
-  <dl>
-    <dt>Price:</dt>
-    <dd>
-      $<%= @book.price %>
-    </dd>
-  </dl>
+    <hr>
 
-  <dl>
-    <dt>College:</dt>
-    <dd>
-      <% if @book.deanza_flag %>
-        Deanza
-      <% end %>
-      <% if @book.foothill_flag %>
-        Foothill
-      <% end %>
-    </dd>
-  </dl>
+    <dl>
+      <dt>ProfessorName:</dt>
+      <dd>
+        <%= @book.prof_name %>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>ClassName:</dt>
+      <dd>
+        <%= @book.class_name %>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>College:</dt>
+      <dd>
+        <% if @book.deanza_flag %>
+          Deanza
+        <% end %>
+        <% if @book.foothill_flag %>
+          Foothill
+        <% end %>
+      </dd>
+    </dl>
+  </div>
 </div>
 
 <ul class='comment_list'>
