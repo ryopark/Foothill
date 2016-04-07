@@ -44,9 +44,20 @@
  }
 
  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+   margin-left: -10px;
+   background: $light_gray;
+   padding: 7px 96px 7px 7px;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+
+   .body {
+     margin-left: 60px;
+   }
+
+   .submit {
+     margin-right: -80px;
+   }
  }
 
  dl {
