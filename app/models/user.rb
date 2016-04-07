@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :timeoutable, :omniauthable, omniauth_providers: [:facebook]
   has_many :sell_books, dependent: :destroy
   has_many :sell_book_comments, dependent: :destroy
+  has_one :photo, as: :imageable
 
   validates :email, presence: true
 
@@ -20,6 +21,7 @@ class User < ActiveRecord::Base
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     unless user
       user = User.create(name: auth.extra.raw_info.name, provider: auth.provider, uid: auth.uid, email: auth.info.email, password: Devise.friendly_token[0, 20])
+      user.create_photo(image: auth.info.image)
     end
     user
   end
