@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   root to: 'sell_books#index'
 
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :sell_books, except: [:edit, :update, :destroy]
   resources :sell_book_comments, only: [:new, :create]
+  resources :chat, only: [:index]
 
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
