@@ -27,6 +27,10 @@ source 'https://rubygems.org' do
   gem 'omniauth-facebook'
   gem 'ransack'
 
+   # websocket
+  gem 'websocket-rails'
+  gem 'faye-websocket', '0.10.0'
+
   group :development, :test do
     gem 'binding_of_caller', '0.7.2'
     gem 'better_errors',     '2.1.1'
