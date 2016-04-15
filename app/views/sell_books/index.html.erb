@@ -2,16 +2,22 @@
   <%= render 'search' %>
 </div>
 
-<ul class='list'>
+<ul class='gallery_box'>
   <% @books.each do |book| %>
-  <div class='book_list'>
-    <div class='list_body'>
-      <%= link_to book do %>
-        <%= image_tag book.photos.first.image.url(:thumb), class: 'book_image f_left' %>
-        <%= book.name %>
-        $<%= book.price %>
-      <% end %>
-    </div>
-  </div>
+    <%= link_to book do %>
+      <li class='gallery_list'>
+        <div class='gallery_img_list'>
+          <%= image_tag book.photos.first.image.url(:medium), class: 'gallery_img' %>
+        </div>
+      </li>
+      <div class='gallery_bottom_info'>
+        <span class='price'>$<%= book.price %></span>
+        <span class='book_name'><%= book.name %></span>
+      </div>
+    <% end %>
   <% end %>
 </ul>
+
+<div class='post_lead_container navbar-fixed-bottom text-center'>
+  <%= link_to 'Sell', new_sell_book_path, class: 'btn btn-default' %>
+</div>

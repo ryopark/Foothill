@@ -10,16 +10,7 @@
 <body>
   <header>
     <h1 class='top_title text-left'><%= link_to 'Top', root_path %></h1>
-    <div class='post_book text-left'>
-      <%= link_to new_sell_book_path, class: 'btn btn-default' do %>
-        Post Book
-      <% end %>
-    </div>
-    <% if user_signed_in? %>
-      <div class='signout_path text-left'>
-        <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-default' %>
-      </div>
-    <% else %>
+    <% unless user_signed_in? %>
       <div class='signup_path text-left'>
         <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default' %>
       </div>
