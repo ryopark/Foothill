@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407140305) do
+ActiveRecord::Schema.define(version: 20160416011811) do
+
+  create_table "message_groups", force: :cascade do |t|
+    t.integer  "sell_book_id", null: false
+    t.integer  "seller_id",    null: false
+    t.integer  "buyer_id",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "message_groups", ["buyer_id"], name: "index_message_groups_on_buyer_id"
+  add_index "message_groups", ["sell_book_id"], name: "index_message_groups_on_sell_book_id"
+  add_index "message_groups", ["seller_id"], name: "index_message_groups_on_seller_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id",          null: false
+    t.integer  "message_group_id", null: false
+    t.text     "body",             null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "messages", ["message_group_id"], name: "index_messages_on_message_group_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "photos", force: :cascade do |t|
     t.integer  "imageable_id"

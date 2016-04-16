@@ -8,4 +8,13 @@
 .comment_list {
   margin-left: -30px;
   padding-bottom: 40px;
+  list-style: none;
+
+  li {
+    margin-bottom: 25px;
+
+    .comment_body {
+      margin-left: 55px;
+    }
+  }
 }
