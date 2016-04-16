@@ -75,10 +75,8 @@
  .footer {
    margin-left: -10px;
    background: $light_gray;
-   padding: 7px 96px 7px 7px;
-   position: fixed;
-   bottom: 0;
-   width: 100%;
+   padding: 7px 96px 30px 7px;
+   margin-bottom: 60px;
 
    .body {
      margin-left: 60px;
@@ -174,6 +172,17 @@
 }
 
 .post_lead_container {
+  .btn {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 15px;
+    border-radius: 0;
+    width: 100%;
+    border: none;
+  }
+}
+
+.posted_container {
   .btn {
     background-color: #ff5a5f;
     color: white;
