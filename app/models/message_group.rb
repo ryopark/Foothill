@@ -1,5 +1,6 @@
 class MessageGroup < ActiveRecord::Base
   belongs_to :sell_book, required: true
+  has_many :messages, dependent: :destroy
 
   validates :seller_id, presence: true
   validates :buyer_id, presence: true

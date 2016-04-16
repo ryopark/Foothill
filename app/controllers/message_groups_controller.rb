@@ -3,6 +3,7 @@ class MessageGroupsController < ApplicationController
 
   def show
     @message_group = MessageGroup.find(params[:id])
+    @message = Message.new
   end
 
   def create
