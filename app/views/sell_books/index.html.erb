@@ -13,6 +13,9 @@
         <div class='gallery_bottom_info'>
           <span class='price'>$<%= book.price %></span>
           <span class='book_name'><%= book.name %></span>
+          <span class='owner_image'>
+            <%= image_tag book.user.photo.image.url(:thumb), class: 'owner_image' %>
+          </span>
         </div>
         <% end %>
       </li>
