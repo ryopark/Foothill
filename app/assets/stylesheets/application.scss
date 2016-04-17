@@ -43,6 +43,7 @@
    }
 
    .gallery_bottom_info {
+     position: relative;
      padding-top: 5px;
      padding-bottom: 15px;
      color: #565a5c;
@@ -56,8 +57,61 @@
        font-size: 22px;
        margin-left: 7px;
      }
+
+     .owner_image {
+       position: absolute;
+       border-radius: 33px;
+       top: -15px;
+       right: 5px;
+     }
    }
  }
+
+ .pc_gallery_box {
+   margin-top: 150px;
+   list-style: none;
+   margin-bottom: 150px;
+
+   li {
+     width: 25%;
+     float: left;
+     padding: 0;
+     border: 0;
+     display: list-item;
+     margin-bottom: 100px;
+
+     .gallery_img {
+       height: 235px;
+       width: 235px;
+       border-radius: 3px;
+     }
+
+     .gallery_bottom_info {
+       padding-top: 5px;
+       padding-bottom: 15px;
+       color: #565a5c;
+       position: relative;
+
+       .book_name {
+         font-size: 20px;
+         margin-left: 5px;
+       }
+
+       .price {
+         font-size: 24px;
+         margin-left: 7px;
+       }
+
+       .owner_image {
+         border-radius: 33px;
+         position: absolute;
+         top: -15px;
+         left: 90px;
+       }
+     }
+   }
+ }
+
 
  .alert {
    margin-top: 20px;
