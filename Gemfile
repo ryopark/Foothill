@@ -18,12 +18,10 @@ source 'https://rubygems.org' do
   gem 'meta-tags',                      '2.1.0'
   gem 'paperclip',                      '4.2.1'
   gem 'rack-user_agent',                '0.4.2'
-  gem 'pg',                             '0.18.1'
   gem 'rails',                          '4.2.1'
   gem 'rails_admin',                    '0.7.0'
   gem 'sass-rails',                     '5.0.3'
   gem 'uglifier',                       '2.7.1'
-  gem 'sqlite3'
   gem 'omniauth'
   gem 'omniauth-facebook'
   gem 'ransack'
@@ -44,6 +42,7 @@ source 'https://rubygems.org' do
     gem 'rubocop',               '0.30.0', require: false
     gem 'spring',                '1.6.3'
     gem 'spring-commands-rspec', '1.0.4'
+    gem 'sqlite3'
   end
 
   group :test do
@@ -56,6 +55,7 @@ source 'https://rubygems.org' do
 
   group :production do
     gem 'rails_12factor', '0.0.3'
+    gem 'pg', '0.18.1'
   end
 
   group :doc do
