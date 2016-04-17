@@ -4,8 +4,11 @@ class MessagesController < ApplicationController
   def create
     @message_group = MessageGroup.find(params[:message_group_id])
     @message = @message_group.messages.build(message_params)
-    @message.save!
-    redirect_to @message_group
+    if @message.save
+      redirect_to @message_group
+    else
+      redirect_to @message_group
+    end
   end
 
   private
