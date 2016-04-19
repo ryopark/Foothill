@@ -8,6 +8,7 @@ source 'https://rails-assets.org' do
 end
 
 source 'https://rubygems.org' do
+  gem 'acts_as_votable',                '0.10.0'
   gem 'aws-sdk',                        '< 2.0'
   gem 'coffee-rails',                   '4.1.0'
   gem 'devise',                         '3.5.1'

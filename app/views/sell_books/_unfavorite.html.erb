@@ -1,0 +1,10 @@
+<div class='unfavorite_button text-center'>
+  <%= link_to remove_favorites_path(sell_book_id: @book.id), method: :post, remote: true do %>
+    <div class='btn btn-default'>
+      <i class='fa fa-heart fa-lg' aria-hidden='true'></i>
+    </div>
+  <% end %>
+</div>
+
+<div id='unfavorite_result'>
+</div>

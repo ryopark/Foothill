@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true
 
+  acts_as_voter
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session['devise.facebook_data'] && session['devise.facebook_data']['extra']['raw_info']

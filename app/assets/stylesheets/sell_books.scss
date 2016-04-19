@@ -8,6 +8,27 @@
 .book {
   margin-top: 40px;
   padding-bottom: 20px;
+  position: relative;
+
+  .favorite_button {
+    position: absolute;
+    right: 25px;
+    top: -68px;
+
+    .btn {
+      color: #ff5a5f;
+    }
+  }
+
+  .unfavorite_button {
+    position: absolute;
+    right: 25px;
+    top: -68px;
+
+    .btn {
+      color: #ff5a5f;
+    }
+  }
 
   .book_price {
     padding: 7px 10px;
