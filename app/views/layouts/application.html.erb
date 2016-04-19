@@ -10,7 +10,11 @@
 <body>
   <header>
     <h1 class='top_title text-left'><%= link_to 'Top', root_path %></h1>
-    <% unless user_signed_in? %>
+    <% if user_signed_in? %>
+      <div class='signup_path text-left'>
+        <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-default' %>
+      </div>
+    <% else %>
       <div class='signup_path text-left'>
         <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default' %>
       </div>
