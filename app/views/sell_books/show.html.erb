@@ -3,6 +3,18 @@
     <center><%= image_tag @book.photos.first.image.url, class: 'img-responsive' %></center>
   </div>
 
+  <% if current_user %>
+    <% if current_user.voted_up_on? @book %>
+      <%= render 'unfavorite' %>
+    <% else %>
+      <%= render 'favorite' %>
+    <% end %> 
+  <% else %>
+    <div class='not_login'>
+      <%= render 'favorite' %>
+    </div>
+  <% end %>
+
   <h1 class='book_name text-center'>
     <%= @book.name %>
   </h1>

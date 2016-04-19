@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :sell_book_comments, only: [:new, :create]
   resources :message_groups, only: [:show, :create]
   resources :messages, only: :create
+  resources :favorites, only: [:index, :create] do
+    post :remove, on: :collection
+  end 
 
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new', as: :new_user_session

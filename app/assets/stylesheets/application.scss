@@ -164,14 +164,17 @@
    }
  }
 
- .signup_path {
-   margin-top: -34px;
-   margin-left: 200px;
-   margin-bottom: -15px;
+ header {
+   position: relative;
 
-   a {
-     color: #ff5a5f;
-     border-color: #ff5a5f;
+   .signup_path {
+     position: absolute;
+     top: 10px;
+     right: 90px;
+
+     a {
+       color: #ff5a5f;
+     }
    }
  }
 
