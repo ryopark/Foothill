@@ -81,6 +81,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   Devise.setup do |config|
-    config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'email, user_education_history', display: 'popup', secure_image_url: true
+    config.omniauth :facebook, '1521865718109269', '212b63905a0a7587127124ad76137dfb', scope: 'email, user_education_history', display: 'popup', secure_image_url: true
   end
 end
