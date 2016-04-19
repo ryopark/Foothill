@@ -36,6 +36,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   Devise.setup do |config|
     config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-    config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'], scope: 'email, user_education_history', display: 'popup', secure_image_url: true
+    config.omniauth :facebook, '1544569619172212', '8319e78e3fa6479efd689248c5e4493e', scope: 'email, user_education_history', display: 'popup', secure_image_url: true
   end
 end
