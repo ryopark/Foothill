@@ -6,4 +6,8 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def message_list
+    @messages = MessageGroup.where(seller_id: current_user.id)
+  end
 end
