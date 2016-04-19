@@ -8,7 +8,7 @@
       <%= render 'unfavorite' %>
     <% else %>
       <%= render 'favorite' %>
-    <% end %> 
+    <% end %>
   <% else %>
     <div class='not_login'>
       <%= render 'favorite' %>
@@ -97,12 +97,10 @@
   <% end %>
 </div>
 
-<% if user_signed_in? %>
-  <% if @book.message_groups.request(current_user).present? %>
-    <div class='posted_container navbar-fixed-bottom text-center'>
-      <%= link_to 'Contact', message_group_path(id: MessageGroup.where(sell_book_id: @book.id, buyer_id: current_user.id).first.id), class: 'btn btn-default' %>
-    </div>
-  <% end %>
+<% if @book.message_groups.request(current_user).present? %>
+  <div class='posted_container navbar-fixed-bottom text-center'>
+    <%= link_to 'Contact', message_group_path(id: MessageGroup.where(sell_book_id: @book.id, buyer_id: current_user.id).first.id), class: 'btn btn-default' %>
+  </div>
 <% else %>
   <div class='post_lead_container navbar-fixed-bottom text-center'>
     <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post,  class: 'btn btn-default' %>

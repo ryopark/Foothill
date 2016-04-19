@@ -164,8 +164,19 @@
    }
  }
 
+
  header {
    position: relative;
+
+   .signout_path {
+      margin-top: -34px;
+      margin-left: 200px;
+      margin-bottom: -15px;
+      a {
+         color: #02b875;
+         border-color: #02b875;
+      }
+   }
 
    .signup_path {
      position: absolute;
@@ -173,7 +184,8 @@
      right: 90px;
 
      a {
-       color: #ff5a5f;
+       color: #02b875;
+       border-color: #02b875;
      }
    }
  }
