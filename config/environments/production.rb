@@ -83,4 +83,12 @@ Rails.application.configure do
   Devise.setup do |config|
     config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'], scope: 'email, user_education_history', display: 'popup', secure_image_url: true
   end
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :s3_region => ENV['AMAZON_S3_REGION']
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']}
 end
