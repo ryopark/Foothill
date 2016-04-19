@@ -1,0 +1,9 @@
+<h1>messagelist</h1>
+<% @messages.each do |message| %>
+  <% user_name = User.find_by(id: message.buyer_id).name %>
+  <% sell_book_name = SellBook.find_by(id: message.sell_book_id).name %>
+  <ul>
+    <li><%= user_name %></li>
+    <li><%= sell_book_name%></li>
+  </ul>
+<% end %>

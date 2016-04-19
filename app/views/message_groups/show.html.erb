@@ -1,17 +1,31 @@
 <% if @message_group.messages.present? %>
-  <ul class='message_list'>
     <% @message_group.messages.each do |message| %>
-      <li>
-        <%= image_tag message.user.photo.image(:thumb), class: 'user_image' %>
-        <span class='user_name'>
-          <%= message.user.name %>
-        </span>
-        <div class='message_body'>
-          <%= message.body %>
-        </div>
-      </li>
+      <%if message.user_id == @message_group.buyer_id %>
+        <ul class='message_list_right'>
+          <li>
+            <%= image_tag message.user.photo.image(:thumb), class: 'user_image' %>
+            <span class='user_name'>
+              <%= message.user.name %>
+            </span>
+            <div class='message_body'>
+              <%= message.body %>
+            </div>
+          </li>
+        </ul>
+      <% else %>
+        <ul class='message_list'>
+          <li>
+            <%= image_tag message.user.photo.image(:thumb), class: 'user_image' %>
+            <span class='user_name'>
+              <%= message.user.name %>
+            </span>
+            <div class='message_body'>
+              <%= message.body %>
+            </div>
+          </li>
+        </ul>
+      <% end %>
     <% end %>
-  </ul>
 <% else %>
   <div class='nomessage text-center'>
     Contact messages<br>
