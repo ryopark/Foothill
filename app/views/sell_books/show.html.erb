@@ -104,11 +104,11 @@
     </div>
   <% else %>
     <div class='post_lead_container navbar-fixed-bottom text-center'>
-      <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post,  class: 'btn btn-default' %>
+      <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post, action: :create, class: 'btn btn-default' %>
     </div>
   <% end %>
 <% else %>
   <div class='post_lead_container navbar-fixed-bottom text-center'>
-    <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post,  class: 'btn btn-default' %>
+    <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post, action: :create, class: 'btn btn-default' %>
   </div>
 <% end %>

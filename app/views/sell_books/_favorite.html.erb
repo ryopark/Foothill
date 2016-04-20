@@ -1,5 +1,5 @@
 <div class='favorite_button text-center'>
-  <%= link_to favorites_path(sell_book_id: @book.id), method: :post, remote: true do %>
+  <%= link_to favorites_path(sell_book_id: @book.id), method: :post, action: :create, remote: true do %>
     <div class='btn btn-default'>
       <i class='fa fa-heart-o fa-lg' aria-hidden='true'></i>
     </div>
