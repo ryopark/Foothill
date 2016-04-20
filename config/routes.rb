@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_scope :user do
+    get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
+    get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
   root to: 'sell_books#index'
 
   resources :top, only: [:index]
@@ -12,10 +16,5 @@ Rails.application.routes.draw do
   resources :messages, only: :create
   resources :favorites, only: [:index, :create] do
     post :remove, on: :collection
-  end
-
-  devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
-    get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 end
