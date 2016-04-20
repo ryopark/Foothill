@@ -1,17 +1,41 @@
 <% if @message_group.messages.present? %>
-  <ul class='message_list'>
-    <% @message_group.messages.each do |message| %>
-      <li>
-        <%= image_tag message.user.photo.image(:thumb), class: 'user_image' %>
-        <span class='user_name'>
-          <%= message.user.name %>
-        </span>
-        <div class='message_body'>
-          <%= message.body %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+  <% if request.from_smartphone? %>
+    <ul class='message_list'>
+      <% @message_group.messages.each do |message| %>
+        <% if message.user == current_user %>
+          <li class='message_me text-right'>
+            <div class='message_body'>
+              <%= message.body %>
+            </div>
+          </li>
+        <% else %>
+          <li class='message_you'>
+            <%= image_tag message.user.photo.image(:thumb), class: 'user_image' %>
+            <span class='user_name'>
+              <%= message.user.name %>
+            </span>
+            <div class='message_body'>
+              <%= message.body %>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    <ul class='pc_message_list'>
+      <% @message_group.messages.each do |message| %>
+        <li>
+          <%= image_tag message.user.photo.image(:thumb), class: 'user_image' %>
+          <span class='user_name'>
+            <%= message.user.name %>
+          </span>
+          <div class='message_body'>
+            <%= message.body %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 <% else %>
   <div class='nomessage text-center'>
     Contact messages<br>
