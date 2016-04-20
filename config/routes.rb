@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :messages, only: :create
   resources :favorites, only: [:index, :create] do
     post :remove, on: :collection
-  end 
+  end
 
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
