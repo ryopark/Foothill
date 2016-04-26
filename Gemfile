@@ -1,4 +1,4 @@
-ruby '2.2.2'
+ruby '2.3.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery',     '2.1.3'
@@ -33,7 +33,7 @@ source 'https://rubygems.org' do
     gem 'dotenv-rails',      '2.0.1'
     gem 'pry-byebug',        '3.1.0'
     gem 'pry-rails',         '0.3.4'
-    gem 'rspec-rails',       '3.2.1'
+    gem 'rspec-rails',       '3.4.2'
   end
 
   group :development do
