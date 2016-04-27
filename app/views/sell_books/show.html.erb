@@ -103,9 +103,11 @@
       <%= link_to 'Contact', message_group_path(id: MessageGroup.where(sell_book_id: @book.id, buyer_id: current_user.id).first.id), class: 'btn btn-default' %>
     </div>
   <% else %>
-    <div class='post_lead_container navbar-fixed-bottom text-center'>
-      <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post, action: :create, class: 'btn btn-default' %>
-    </div>
+    <% if @book.user_id != current_user.id %>
+      <div class='post_lead_container navbar-fixed-bottom text-center'>
+        <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post, action: :create, class: 'btn btn-default' %>
+      </div>
+    <% end %>
   <% end %>
 <% else %>
   <div class='post_lead_container navbar-fixed-bottom text-center'>
