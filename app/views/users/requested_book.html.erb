@@ -1,0 +1,9 @@
+<h1>Requested Books</h1>
+ <% @messages.each do |message| %>
+   <% user_name = User.find_by(id: message.seller_id).name %>
+   <% sell_book_name = SellBook.find_by(id: message.sell_book_id).name %>
+   <ul style='list-style-type: none';>     <li><%= user_name %></li>
+     <li><%= sell_book_name%></li>
+     <li><%= link_to 'Detail', message_group_path(message.id), class: 'btn btn-default' %></li>
+   </ul>
+ <% end %>
