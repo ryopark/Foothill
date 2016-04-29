@@ -26,6 +26,20 @@ class SellBooksController < ApplicationController
     end
   end
 
+  def edit
+    @book = SellBook.find(params[:id])
+  end
+
+  def update
+    @book = SellBook.find(params[:id])
+    if @book.update_attributes(sell_book_params)
+      redirect_to @book
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def sell_book_params

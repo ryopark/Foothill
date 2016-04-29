@@ -1,0 +1,64 @@
+<h1>Update selling book</h1>
+
+<%= form_for @book do |f| %>
+  <% if @book.errors.any? %>
+    <div id='error_explanation'>
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='form-group'>
+    <%= f.fields_for :photos, @book.photos.build do |p|%>
+      <%= p.label :image, 'picture of a book' %>
+      <%= p.file_field :image %>
+    <% end %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :name, 'book name' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :description, 'description' %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :class_name, 'class name' %>
+    <%= f.text_field :class_name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :prof_name, 'prof name' %>
+    <%= f.text_field :prof_name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :price, 'price' %>
+    <%= f.number_field :price, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :sell_season, 'sell_season' %>
+    <%= f.text_field :sell_season, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :deanza_flag, 'de anza' %>
+    <%= f.check_box :deanza_flag %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :foothill_flag, 'foothill' %>
+    <%= f.check_box :foothill_flag %>
+  </div>
+
+  <div class='actions text-center'>
+    <%= f.submit 'submit', class: 'btn btn-default' %>
+  </div>
+<% end %>

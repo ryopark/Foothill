@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'requested_book', to: 'users#requested_book'
   get 'selling_book', to: 'users#selling_book'
 
-  resources :sell_books, except: [:edit, :update, :destroy]
+  resources :sell_books, except: [:destroy]
   resources :sell_book_comments, only: [:new, :create]
   resources :message_groups, only: [:show, :create]
   resources :messages, only: :create

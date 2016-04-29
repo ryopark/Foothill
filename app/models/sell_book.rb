@@ -10,6 +10,7 @@ class SellBook < ActiveRecord::Base
   validates :foothill_flag, inclusion: { in: [true, false] }
 
   accepts_nested_attributes_for :photos
+  accepts_nested_attributes_for :message_groups
 
   acts_as_votable
 end
