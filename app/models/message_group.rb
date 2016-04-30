@@ -5,7 +5,9 @@ class MessageGroup < ActiveRecord::Base
   validates :seller_id, presence: true
   validates :buyer_id, presence: true
 
-  scope :request, -> current_user { where(buyer_id: current_user.id) }
+  scope :requested, -> current_user { where(buyer_id: current_user.id) }
+  scope :selling, -> current_user { where(seller_id: current_user.id) }
+
 
   def create(message_group, buyer, seller)
     message_group.buyer_id = buyer.id

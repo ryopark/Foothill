@@ -1,6 +1,6 @@
 <h1>Update selling book</h1>
 
-<%= form_for @book do |f| %>
+<%= form_for @book, html: { multipart: true } do |f| %>
   <% if @book.errors.any? %>
     <div id='error_explanation'>
       <ul>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div class='form-group'>
-    <%= f.fields_for :photos, @book.photos.build do |p|%>
+    <%= f.fields_for :photos do |p|%>
       <%= p.label :image, 'picture of a book' %>
       <%= p.file_field :image %>
     <% end %>

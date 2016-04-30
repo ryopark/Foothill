@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def requested_book
-    @messages = MessageGroup.where(buyer_id: current_user.id)
+    @messages = MessageGroup.requested
   end
 
   def selling_book
-    @messages = MessageGroup.where(seller_id: current_user.id)
-    @books = SellBook.where(user_id: current_user.id)
+    @messages = MessageGroup.selling
+    @books = current_user.sell_books
   end
 end

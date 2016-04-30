@@ -28,17 +28,31 @@ class SellBooksController < ApplicationController
 
   def edit
     @book = SellBook.find(params[:id])
+    @book_photos = @book.photos
   end
 
   def update
     @book = SellBook.find(params[:id])
-    if @book.update_attributes(sell_book_params)
-      redirect_to @book
-    else
-      render :edit
+    respond_to do |format|
+      if sell_book_params[:photos_attributes]["0"].present?
+        SellBook.find(params[:id]).photos.each do |image|
+          image.destroy
+        end
+      end
+      if @book.update(sell_book_params)
+        @book.photos.each do |image|
+          if image.image_file_name == nil
+            image.destroy
+          end
+        end
+        format.html { redirect_to @book, notice: 'Article was successfully updated.' }
+        format.json { render :show, status: :ok, location: @book }
+      else
+        format.html { render :edit }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
     end
   end
-
 
   private
 

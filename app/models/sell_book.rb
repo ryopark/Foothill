@@ -1,6 +1,6 @@
 class SellBook < ActiveRecord::Base
   belongs_to :user, required: true
-  has_many :photos, as: :imageable
+  has_many :photos, as: :imageable, dependent: :destroy
   has_many :sell_book_comments, dependent: :destroy
   has_many :message_groups, dependent: :destroy
 
