@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def requested_book
-    @messages = MessageGroup.requested
+    @messages = MessageGroup.requested(current_user)
   end
 
   def selling_book
-    @messages = MessageGroup.selling
+    @messages = MessageGroup.selling(current_user)
     @books = current_user.sell_books
   end
 end

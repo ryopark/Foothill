@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :requested_book
-      get :sellings_book
+      get :selling_book
     end
   end
   resources :sell_books
