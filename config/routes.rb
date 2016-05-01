@@ -8,9 +8,13 @@ Rails.application.routes.draw do
 
   resources :top, only: [:index]
 
-  resources :users
-
-  resources :sell_books, except: [:edit, :update, :destroy]
+  resources :users do
+    member do
+      get :requested_book
+      get :selling_book
+    end
+  end
+  resources :sell_books
   resources :sell_book_comments, only: [:new, :create]
   resources :message_groups, only: [:show, :create]
   resources :messages, only: :create
