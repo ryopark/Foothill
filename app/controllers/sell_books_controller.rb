@@ -35,7 +35,7 @@ class SellBooksController < ApplicationController
     @book = SellBook.find(params[:id])
     respond_to do |format|
       if sell_book_params[:photos_attributes]["0"].present?
-        SellBook.find(params[:id]).photos.each do |image|
+        @book.photos.each do |image|
           image.destroy
         end
       end
@@ -45,7 +45,7 @@ class SellBooksController < ApplicationController
             image.destroy
           end
         end
-        format.html { redirect_to @book, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @book, notice: 'Text was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
