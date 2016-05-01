@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418235858) do
+ActiveRecord::Schema.define(version: 20160501222254) do
 
   create_table "message_groups", force: :cascade do |t|
     t.integer  "sell_book_id", null: false
@@ -59,22 +59,18 @@ ActiveRecord::Schema.define(version: 20160418235858) do
   add_index "sell_book_comments", ["user_id"], name: "index_sell_book_comments_on_user_id"
 
   create_table "sell_books", force: :cascade do |t|
-    t.string   "name",               default: "",    null: false
-    t.string   "prof_name",          default: "",    null: false
-    t.boolean  "in_class",           default: true
+    t.string   "name",          default: "",    null: false
+    t.string   "prof_name",     default: "",    null: false
+    t.boolean  "in_class",      default: true
     t.string   "class_name"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "price"
     t.integer  "user_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.boolean  "deanza_flag",        default: false
-    t.boolean  "foothill_flag",      default: false
+    t.boolean  "deanza_flag",   default: false
+    t.boolean  "foothill_flag", default: false
     t.text     "description"
-    t.string   "sell_season",        default: "",    null: false
+    t.string   "sell_season",   default: "",    null: false
   end
 
   create_table "user_lessons", force: :cascade do |t|
