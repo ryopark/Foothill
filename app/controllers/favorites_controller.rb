@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @sell_books = current_user.votes.up.for_type(SellBook).order('created_at desc').votables
+    @books = current_user.votes.up.for_type(SellBook).order('created_at desc').votables
   end
 
   def create

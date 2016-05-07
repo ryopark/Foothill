@@ -189,6 +189,13 @@ header {
       border-color: #ff5a5f;
     }
   }
+
+  .user_image {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    border-radius: 999em;
+  }
 }
 
 .btn {
@@ -251,4 +258,34 @@ body {
     width: 100%;
     border: none;
   }
+}
+
+body {
+  position: relative;
+
+  .slide_menu {
+    position: fixed;
+    top: 30px;
+    right: -240px;
+    width: 200px;
+    height: 100%;
+
+    ul {
+      list-style: none;
+      margin-top: 30px;
+      margin-left: -30px;
+    }
+
+    li {
+      margin-top: 10px;
+      a {
+        color: $dark_gray;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.menu_user_icon {
+  border-radius: 33px;
 }

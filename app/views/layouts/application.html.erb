@@ -7,12 +7,40 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<script>
+  $(function(){
+    var menu = $('.slide_menu'),
+        body = $(document.body),
+        menuWidth = menu.outerWidth();
+
+    $('.menu_button').on('click', function(){
+      body.toggleClass('open');
+
+      if (body.hasClass('open')) {
+        body.animate({ 'right' : menuWidth }, 300);
+        menu.animate({ 'right' : 0 }, 300);
+      } else {
+        menu.animate({ 'right' : -menuWidth }, 300);
+        body.animate({ 'right' : 0 }, 300);
+      }
+    });
+  });
+</script>
 <body>
   <header>
     <h1 class='top_title text-left'><%= link_to 'Top', root_path %></h1>
     <% if user_signed_in? %>
-      <div class='signup_path text-left'>
-        <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-default' %>
+      <div class='user_image'>
+        <%= image_tag current_user.photo.image.url, class: 'menu_button' %>
+      </div>
+
+      <div class='slide_menu'>
+        <div class='text-center'>
+          <%= image_tag current_user.photo.image.url, class: 'manu_user_icon' %>
+        </div>
+        <ul>
+          <li><%= link_to 'Favorites', favorites_path %></li>
+        </ul>
       </div>
     <% else %>
       <div class='signup_path text-left'>
