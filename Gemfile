@@ -26,6 +26,8 @@ source 'https://rubygems.org' do
   gem 'omniauth'
   gem 'omniauth-facebook'
   gem 'ransack'
+  gem 'react-rails',                    '~> 1.7.0'
+
 
   group :development, :test do
     gem 'binding_of_caller', '0.7.2'
