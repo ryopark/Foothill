@@ -28,25 +28,7 @@
 </script>
 <body>
   <header>
-    <h1 class='top_title text-left'><%= link_to 'Top', root_path %></h1>
-    <% if user_signed_in? %>
-      <div class='user_image'>
-        <%= image_tag current_user.photo.image.url, class: 'menu_button' %>
-      </div>
-
-      <div class='slide_menu'>
-        <div class='text-center'>
-          <%= image_tag current_user.photo.image.url, class: 'manu_user_icon' %>
-        </div>
-        <ul>
-          <li><%= link_to 'Favorites', favorites_path %></li>
-        </ul>
-      </div>
-    <% else %>
-      <div class='signup_path text-left'>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default' %>
-      </div>
-    <% end %>
+    <%= react_component('SimpleHeader',{userSignedIn: user_signed_in?, userImg: current_user.photo.image.url}) %>
   </header>
 
   <% if notice.present? %>
