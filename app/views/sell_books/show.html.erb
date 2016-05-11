@@ -38,9 +38,14 @@
     <hr>
 
     <dl>
-      <dt>SellSeason:</dt>
+      <dt>When sell this?:</dt>
       <dd>
-        <%= @book.sell_season %>
+        <% if @book.sell_now_flag %>
+          Sell this quarter!
+        <% end %>
+        <% if @book.sell_next_flag %>
+          sell next quarter!
+        <% end %>
       </dd>
     </dl>
 

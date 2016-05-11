@@ -42,8 +42,13 @@
   </div>
 
   <div class='form-group'>
-    <%= f.label :sell_season, 'sell_season' %>
-    <%= f.text_field :sell_season, class: 'form-control' %>
+    <%= f.label :sell_now_flag, 'Sell this quarter' %>
+    <%= f.check_box :sell_now_flag %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :sell_next_flag, 'Sell next quarter' %>
+    <%= f.check_box :sell_next_flag %>
   </div>
 
   <div class='form-group'>
