@@ -23,11 +23,11 @@ $(function () {
   <div class='overlay' id='js__overlay'></div>
      <nav class='side-menu'>
       <ul class='list-group'>
-        <li class='list-group-item'><%= link_to 'Profile', new_user_registration_path, class: '' %></li>
-        <li class='list-group-item'><%= link_to 'Selling Books', selling_book_user_path(current_user.id), class: '' %></li>
-        <li class='list-group-item'><%= link_to 'Requested Books', requested_book_user_path(current_user.id), class: '' %></li>
-        <li class='list-group-item'><%= link_to 'Favorite Books', favorites_path, class: '' %></li>
-        <li class='list-group-item'><%= link_to 'Sign out', destroy_user_session_path, class: '' %></li>
+        <li class='list-group-item'><%= link_to 'Profile', new_user_registration_path, class: 'link' %></li>
+        <li class='list-group-item'><%= link_to 'Selling Books', selling_book_user_path(current_user.id), class: 'link' %></li>
+        <li class='list-group-item'><%= link_to 'Requested Books', requested_book_user_path(current_user.id), class: 'link' %></li>
+        <li class='list-group-item'><%= link_to 'Favorite Books', favorites_path, class: 'link' %></li>
+        <li class='list-group-item'><%= link_to 'Sign out', destroy_user_session_path, class: 'link' %></li>
       </ul>
      </nav>
   <div class='side-menu-btn' id='js__sideMenuBtn'><%= image_tag current_user.photo.image.url, class: 'user_image' %></div>
