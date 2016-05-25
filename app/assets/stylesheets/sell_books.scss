@@ -7,9 +7,9 @@
 
 .book {
   margin-top: 40px;
+  margin-bottom: 30px;
   padding-bottom: 20px;
   position: relative;
-  margin-left: 10px;
 
   .favorite_button {
     position: absolute;
@@ -92,4 +92,31 @@
   color: #fff;
   font-size: 30px;
   padding-left: -10px;
+}
+
+.edit_button {
+  width: 50%;
+
+  .btn {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 15px;
+    border-radius: 0;
+    width: 100%;
+    border: none;
+  }
+}
+
+.delete_button {
+  width: 50%;
+  margin-left: 50%;
+
+  .btn {
+    background-color: $light_gray;
+    color: $dark_gray;
+    padding: 15px;
+    border-radius: 0;
+    width: 100%;
+    border: none;
+  }
 }
