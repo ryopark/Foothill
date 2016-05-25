@@ -13,12 +13,13 @@ Rails.application.routes.draw do
       get :requested_book
       get :selling_book
     end
+    resources :favorites, only: :index, controller: 'users/favorites'
   end
   resources :sell_books
   resources :sell_book_comments, only: [:new, :create]
   resources :message_groups, only: [:show, :create]
   resources :messages, only: :create
-  resources :favorites, only: [:index, :create] do
+  resources :favorites, only: :create do
     post :remove, on: :collection
   end
 end

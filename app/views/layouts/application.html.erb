@@ -26,7 +26,7 @@ $(function () {
         <li class='list-group-item'><%= link_to 'Profile', new_user_registration_path, class: 'link' %></li>
         <li class='list-group-item'><%= link_to 'Selling Books', selling_book_user_path(current_user.id), class: 'link' %></li>
         <li class='list-group-item'><%= link_to 'Requested Books', requested_book_user_path(current_user.id), class: 'link' %></li>
-        <li class='list-group-item'><%= link_to 'Favorite Books', favorites_path, class: 'link' %></li>
+        <li class='list-group-item'><%= link_to 'Favorite Books', user_favorites_path(user_id: current_user.id), class: 'link' %></li>
         <li class='list-group-item'><%= link_to 'Sign out', destroy_user_session_path, class: 'link' %></li>
       </ul>
      </nav>
