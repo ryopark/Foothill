@@ -113,9 +113,12 @@
         <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post, action: :create, class: 'btn btn-default' %>
       </div>
     <% else %>
-      <div class='post_lead_container navbar-fixed-bottom text-center'>
+      <span class='edit_button navbar-fixed-bottom text-left'>
         <%= link_to 'Edit', edit_sell_book_path(sell_book_id: @book.id), class: 'btn btn-default' %>
-      </div>
+      </span>
+      <span class='delete_button navbar-fixed-bottom text-right'>
+        <%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+      </span>
     <% end %>
   <% end %>
 <% else %>

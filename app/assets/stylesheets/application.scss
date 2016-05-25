@@ -339,6 +339,28 @@ body {
   }
 }
 
+.edit_button {
+  .btn {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 15px;
+    border-radius: 0;
+    width: 50%;
+    border: none;
+  }
+}
+
+.delete_button {
+  .btn {
+    background-color: $light_gray;
+    color: $dark_gray;
+    padding: 15px;
+    border-radius: 0;
+    width: 50%;
+    border: none;
+  }
+}
+
 .posted_container {
   .btn {
     background-color: #ff5a5f;

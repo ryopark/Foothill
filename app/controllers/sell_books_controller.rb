@@ -1,5 +1,5 @@
 class SellBooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @q = SellBook.search(params[:q])
@@ -52,6 +52,11 @@ class SellBooksController < ApplicationController
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    SellBook.find(params[:id]).destroy
+    redirect_to selling_book_user_path(current_user.id)
   end
 
   private
