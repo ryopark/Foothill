@@ -1,5 +1,6 @@
 class SellBooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_book_owner, only: [:edit, :update, :destroy]
 
   def index
     @q = SellBook.search(params[:q])
@@ -60,6 +61,13 @@ class SellBooksController < ApplicationController
   end
 
   private
+
+  def check_book_owner
+    @book = SellBook.find(param[:id])
+    if @book.user_id != current_user.id
+      redirect_to @book
+    end
+  end
 
   def sell_book_params
     params.require(:sell_book).permit(:name, :description, :class_name, :prof_name, :price, :user_id, :sell_now_flag, :sell_next_flag, :deanza_flag, :foothill_flag, photos_attributes: :image)
