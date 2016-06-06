@@ -22,10 +22,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer :uid, :limit => 8 #bigintにする
       t.string :name
       t.string :provider
-      t.string :password
       t.string :email
       t.string :school_name
-
+      t.string :encrypted_password
 
       ## Confirmable
       # t.string   :confirmation_token
