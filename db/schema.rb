@@ -91,9 +91,10 @@ ActiveRecord::Schema.define(version: 20160512010954) do
     t.integer  "uid",                 limit: 8
     t.string   "name"
     t.string   "provider"
-    t.string   "password"
     t.string   "email"
     t.string   "school_name"
+    t.string   "encrypted_password"
+    t.string   "facebook_url"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
   end

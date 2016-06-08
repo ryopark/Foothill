@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :registerable, :trackable,
+  devise :registerable, :trackable, :database_authenticatable,
          :timeoutable, :omniauthable, omniauth_providers: [:facebook]
   has_many :sell_books, dependent: :destroy
   has_many :sell_book_comments, dependent: :destroy
@@ -19,10 +19,14 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.find_for_facebook_oauth(auth, _signed_in_resource = nil)
+  def self.find_for_facebook_oauth(auth)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     unless user
-      user = User.create(name: auth.extra.raw_info.name, provider: auth.provider, uid: auth.uid, email: auth.info.email, password: Devise.friendly_token[0, 20])
+      user = User.create(name: auth.extra.raw_info.name,
+                         provider: auth.provider,
+                         uid: auth.uid,
+                         email: auth.info.email,
+                         password: Devise.friendly_token[0, 20] )
       user.create_photo(image: auth.info.image)
     end
     user

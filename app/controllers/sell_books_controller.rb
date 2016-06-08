@@ -1,6 +1,7 @@
 class SellBooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_book_owner, only: [:edit, :update, :destroy]
+  before_action :check_user_school
 
   def index
     @q = SellBook.search(params[:q])
@@ -71,5 +72,13 @@ class SellBooksController < ApplicationController
 
   def sell_book_params
     params.require(:sell_book).permit(:name, :description, :class_name, :prof_name, :price, :user_id, :sell_now_flag, :sell_next_flag, :deanza_flag, :foothill_flag, photos_attributes: :image)
+  end
+
+  def check_user_school
+    if user_signed_in?
+      if current_user.school_name == nil || current_user.facebook_url == nil || current_user.email == nil
+        redirect_to edit_user_registration_path(current_user.id), notice: 'Please fill in the blank'
+      end
+    end
   end
 end
