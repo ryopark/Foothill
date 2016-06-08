@@ -14,6 +14,6 @@ before_filter :configure_account_update_params, only: [:update]
   private
 
   def account_update_params
-    params.require(:user).permit(:name, :school_name, :email)
+    params.require(:user).permit(:name, :school_name, :email, :facebook_url)
   end
 end

@@ -25,6 +25,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :school_name
       t.string :encrypted_password
+      t.string :facebook_url
 
       ## Confirmable
       # t.string   :confirmation_token
