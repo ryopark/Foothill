@@ -13,6 +13,7 @@ class SellBooksController < ApplicationController
     @book_image = @book.photos.first
     @sell_book_comments = @book.sell_book_comments.order(:id)
     @sell_book_comment = @book.sell_book_comments.build
+    @seller_url = User.find(@book.user_id).facebook_url
   end
 
   def new
