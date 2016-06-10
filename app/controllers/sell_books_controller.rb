@@ -65,7 +65,7 @@ class SellBooksController < ApplicationController
   private
 
   def check_book_owner
-    @book = SellBook.find(param[:id])
+    @book = SellBook.find(params[:id])
     if @book.user_id != current_user.id
       redirect_to @book
     end
