@@ -13,6 +13,7 @@ class SellBooksController < ApplicationController
     @book_image = @book.photos.first
     @sell_book_comments = @book.sell_book_comments.order(:id)
     @sell_book_comment = @book.sell_book_comments.build
+    @seller_url = User.find(@book.user_id).facebook_url
   end
 
   def new
@@ -64,7 +65,7 @@ class SellBooksController < ApplicationController
   private
 
   def check_book_owner
-    @book = SellBook.find(param[:id])
+    @book = SellBook.find(params[:id])
     if @book.user_id != current_user.id
       redirect_to @book
     end

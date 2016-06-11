@@ -5,14 +5,3 @@
     <li><%= link_to 'Detail', sell_book_path(book.id), class: 'btn btn-default' %></li>
   </ul>
 <% end %>
-
-<h1>Progress Message Groups</h1>
-<% @messages.each do |message| %>
-  <%  user_name = User.find_by(id: message.buyer_id).name %>
-  <% sell_book_name = SellBook.find_by(id: message.sell_book_id).name %>
-  <ul style='list-style-type: none';>
-    <li>User: <%= user_name %></li>
-    <li>Book: <%= sell_book_name%></li>
-    <li><%= link_to 'chat', message_group_path(message.id), class: 'btn btn-default' %></li>
-  </ul>
-<% end %>

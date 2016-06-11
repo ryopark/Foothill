@@ -78,23 +78,17 @@
 </div>
 
 <% if user_signed_in? %>
-  <% if @book.message_groups.where(buyer_id: current_user.id).present? %>
-    <div class='posted_container navbar-fixed-bottom text-center'>
-      <%= link_to 'Contact', message_group_path(id: MessageGroup.where(sell_book_id: @book.id, buyer_id: current_user.id).first.id), class: 'btn btn-default' %>
+  <% if @book.user_id != current_user.id %>
+    <div class='post_lead_container navbar-fixed-bottom text-center'>
+      <%= link_to 'Contact with Facebook', @seller_url, class: 'btn btn-default' %>
     </div>
   <% else %>
-    <% if @book.user_id != current_user.id %>
-      <div class='post_lead_container navbar-fixed-bottom text-center'>
-        <%= link_to 'Request', message_groups_path(sell_book_id: @book.id), method: :post, action: :create, class: 'btn btn-default' %>
-      </div>
-    <% else %>
-      <div class='edit_button navbar-fixed-bottom'>
-        <%= link_to 'Edit', edit_sell_book_path(sell_book_id: @book.id), class: 'btn btn-default' %>
-      </div>
-      <div class='delete_button navbar-fixed-bottom'>
-        <%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
-      </div>
-    <% end %>
+    <div class='edit_button navbar-fixed-bottom'>
+      <%= link_to 'Edit', edit_sell_book_path(sell_book_id: @book.id), class: 'btn btn-default' %>
+    </div>
+    <div class='delete_button navbar-fixed-bottom'>
+      <%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+    </div>
   <% end %>
 <% else %>
   <div class='post_lead_container navbar-fixed-bottom text-center'>
