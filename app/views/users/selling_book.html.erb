@@ -1,7 +1,19 @@
 <h1>Selling Books</h1>
-<% @books.each do |book| %>
-  <ul style='list-style-type: none';>
-    <li>Book: <%= book.name %></li>
-    <li><%= link_to 'Detail', sell_book_path(book.id), class: 'btn btn-default' %></li>
-  </ul>
-<% end %>
+<ul class='gallery_box'>
+  <% @books.each do |book| %>
+    <li class='gallery_list'>
+      <%= link_to book do %>
+      <div class='gallery_img_list'>
+        <%= image_tag book.photos.first.image.url(:medium), class: 'gallery_img' %>
+      </div>
+      <div class='gallery_bottom_info'>
+        <span class='price'>$<%= book.price %></span>
+        <span class='book_name'><%= book.name %></span>
+        <span class='owner_image'>
+          <%= image_tag book.user.photo.image.url(:thumb), class: 'owner_image' %>
+        </span>
+      </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
