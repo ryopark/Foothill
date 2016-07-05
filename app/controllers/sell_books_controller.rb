@@ -4,7 +4,7 @@ class SellBooksController < ApplicationController
   before_action :check_user_school
 
   def index
-    @q = SellBook.search(params[:q])
+    @q = SellBook.is_active.search(params[:q])
     @books = @q.result(distinct: true)
   end
 
@@ -56,7 +56,7 @@ class SellBooksController < ApplicationController
   end
 
   def destroy
-    SellBook.find(params[:id]).destroy
+    SellBook.find(params[:id]).update(active_flag: false)
     redirect_to selling_book_user_path(current_user.id)
   end
 
@@ -70,7 +70,7 @@ class SellBooksController < ApplicationController
   end
 
   def sell_book_params
-    params.require(:sell_book).permit(:name, :description, :class_name, :prof_name, :price, :user_id, :sell_now_flag, :sell_next_flag, :deanza_flag, :foothill_flag, photos_attributes: :image)
+    params.require(:sell_book).permit(:active_flag, :name, :description, :class_name, :prof_name, :price, :user_id, :sell_now_flag, :sell_next_flag, :deanza_flag, :foothill_flag, photos_attributes: :image)
   end
 
   def check_user_school
