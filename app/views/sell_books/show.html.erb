@@ -38,18 +38,6 @@
     <hr>
 
     <dl>
-      <dt>When sell this?:</dt>
-      <dd>
-        <% if @book.sell_now_flag %>
-          Sell this quarter!
-        <% end %>
-        <% if @book.sell_next_flag %>
-          sell next quarter!
-        <% end %>
-      </dd>
-    </dl>
-
-    <dl>
       <dt>ProfessorName:</dt>
       <dd>
         <%= @book.prof_name %>
@@ -63,17 +51,6 @@
       </dd>
     </dl>
 
-    <dl>
-      <dt>College:</dt>
-      <dd>
-        <% if @book.deanza_flag %>
-          Deanza
-        <% end %>
-        <% if @book.foothill_flag %>
-          Foothill
-        <% end %>
-      </dd>
-    </dl>
   </div>
 </div>
 
