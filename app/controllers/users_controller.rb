@@ -13,6 +13,6 @@ class UsersController < ApplicationController
 
   def selling_book
     @messages = MessageGroup.selling(current_user)
-    @books = current_user.sell_books
+    @books = current_user.sell_books.is_active
   end
 end

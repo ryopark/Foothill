@@ -12,5 +12,7 @@ class SellBook < ActiveRecord::Base
   accepts_nested_attributes_for :photos
   accepts_nested_attributes_for :message_groups
 
+  scope :is_active, -> { where(active_flag: true) }
+
   acts_as_votable
 end

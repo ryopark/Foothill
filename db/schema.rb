@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512010954) do
+ActiveRecord::Schema.define(version: 20160704161505) do
 
   create_table "message_groups", force: :cascade do |t|
     t.integer  "sell_book_id", null: false
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160512010954) do
     t.text     "description"
     t.boolean  "sell_now_flag",  default: false
     t.boolean  "sell_next_flag", default: false
+    t.boolean  "active_flag",    default: true,  null: false
   end
 
   create_table "user_lessons", force: :cascade do |t|
