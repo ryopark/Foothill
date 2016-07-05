@@ -75,7 +75,7 @@ class SellBooksController < ApplicationController
 
   def check_user_school
     if user_signed_in?
-      if current_user.school_name == nil || current_user.facebook_url == nil || current_user.email == nil
+      if current_user.school_name == nil || current_user.facebook_url == nil || current_user.email == nil || current_user.major == nil
         redirect_to edit_user_registration_path(current_user.id), notice: 'Please fill in the blank'
       end
     end

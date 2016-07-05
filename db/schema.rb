@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704161505) do
+ActiveRecord::Schema.define(version: 20160705221642) do
 
   create_table "message_groups", force: :cascade do |t|
     t.integer  "sell_book_id", null: false
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160704161505) do
     t.string   "facebook_url"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
+    t.string   "major"
   end
 
   add_index "users", ["uid"], name: "index_users_on_uid", unique: true
