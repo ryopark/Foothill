@@ -1,0 +1,16 @@
+@import 'bootstrap';
+
+.edit_user {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  .form-group {
+    .form-control {
+
+      text-align: center;
+    }
+  }
+
+}
