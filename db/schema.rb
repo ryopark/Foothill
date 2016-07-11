@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705221642) do
+ActiveRecord::Schema.define(version: 20160709193421) do
 
   create_table "message_groups", force: :cascade do |t|
     t.integer  "sell_book_id", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160705221642) do
     t.string   "name",           default: "",    null: false
     t.string   "prof_name",      default: "",    null: false
     t.boolean  "in_class",       default: true
-    t.string   "class_name"
+    t.string   "class_name",     default: "",    null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "price"

@@ -4,7 +4,7 @@ class SellBook < ActiveRecord::Base
   has_many :sell_book_comments, dependent: :destroy
   has_many :message_groups, dependent: :destroy
 
-  validates :name, :prof_name, presence: true
+  validates :name, :prof_name, :class_name, :price, :photos, presence: true
   validates :in_class, inclusion: { in: [true, false] }
   validates :deanza_flag, inclusion: { in: [true, false] }
   validates :foothill_flag, inclusion: { in: [true, false] }
