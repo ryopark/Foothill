@@ -15,7 +15,11 @@ class SellBooksController < ApplicationController
   end
 
   def new
-    @book = current_user.sell_books.build
+    if current_user.facebook_url == "" || current_user.facebook_url == nil
+      redirect_to edit_user_registration_path(current_user.id), notice: 'Please add Facebook_url before selling book!'
+    else
+      @book = current_user.sell_books.build
+    end
   end
 
   def create
