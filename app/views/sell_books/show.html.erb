@@ -57,7 +57,7 @@
 <% if user_signed_in? %>
   <% if @book.user_id != current_user.id %>
     <div class='post_lead_container navbar-fixed-bottom text-center'>
-      <%= link_to 'Contact with Facebook', @seller_url, class: 'btn btn-default' %>
+      <%= link_to 'Contact with the seller', @seller_url, class: 'btn btn-default' %>
     </div>
   <% else %>
     <div class='edit_button navbar-fixed-bottom'>
