@@ -1,8 +1,64 @@
 @import 'bootstrap';
 @import 'settings';
 
+.book_wrapper {
+  padding: 60px 0;
+}
+
+.book_box {
+  width: 100%;
+  color: $dark_gray;
+  padding-bottom: 70px;
+
+  .forecast_info {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+  .book_info {
+    position: relative;
+    color: #565a5c;
+
+    .book_name {
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .price {
+      position: absolute;
+      top: -50px;
+      left: 0px;
+      font-size: 22px;
+      background-color: rgba(60,63,64,0.9);
+      background-size: 40%;
+      color: #fff;
+      font-size: 30px;
+      width: 40%;
+    }
+
+    .owner_image {
+      position: absolute;
+      border-radius: 33px;
+      top: -15px;
+      right: 5px;
+    }
+  }
+
+  .book_img_list {
+    .book_img {
+      width: 100%;
+      max-height: 50%;
+      overflow: hidden;
+    }
+  }
+}
+
 .new_sell_book {
   margin-top: 40px;
+  padding-bottom: 60px;
 }
 
 .book {
@@ -11,9 +67,16 @@
   padding-bottom: 60px;
   position: relative;
 
+  .pc_image {
+    img {
+      width: 40%;
+      height: 40%;
+    }
+  }
+
   .favorite_button {
     position: absolute;
-    right:95px;
+    right: 90px;
     top: -68px;
 
     .btn {
@@ -32,13 +95,11 @@
   }
 
   .book_price {
-    padding: 7px 20px;
     background-color: rgba(60,63,64,0.9);
     background-size: 100%;
     color: #fff;
     font-size: 30px;
     width: 100%;
-    margin-left: -10px;
   }
 
   .owner_image {

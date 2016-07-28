@@ -3,14 +3,14 @@
 </div>
 
 <% if request.from_smartphone? %>
-  <ul class='gallery_box'>
+  <div class='book_wrapper'>
     <% @books.each do |book| %>
-      <li class='gallery_list'>
+      <div class='book_box'>
         <%= link_to book do %>
-        <div class='gallery_img_list'>
-          <%= image_tag book.photos.first.image.url(:medium), class: 'gallery_img' %>
+        <div class='book_img_list'>
+          <%= image_tag book.photos.first.image.url(:medium), class: 'book_img' %>
         </div>
-        <div class='gallery_bottom_info'>
+        <div class='book_info'>
           <span class='price'>$<%= book.price %></span>
           <span class='book_name'><%= book.name %></span>
           <span class='owner_image'>
@@ -18,9 +18,9 @@
           </span>
         </div>
         <% end %>
-      </li>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% else %>
   <ul class='pc_gallery_box'>
     <% @books.each do |book| %>

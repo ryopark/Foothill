@@ -1,7 +1,13 @@
 <div class='book'>
-  <div class='image'>
-    <center><%= image_tag @book.photos.first.image.url, class: 'img-responsive' %></center>
-  </div>
+  <% if request.from_pc? %>
+    <div class='pc_image'>
+      <center><%= image_tag @book.photos.first.image.url, class: 'img-responsive' %></center>
+    </div>
+  <% else %>
+    <div class='image'>
+      <center><%= image_tag @book.photos.first.image.url, class: 'img-responsive' %></center>
+    </div>
+  <% end %>
 
   <% if current_user %>
     <% if current_user.voted_up_on? @book %>
