@@ -1,29 +1,23 @@
 <%= search_form_for @q do |f| %>
-  <form class=''>
-    <div class='form-group row'>
-      <label class="col-sm-1 form-control-label">Book</label>
-      <div class="col-sm-6">
+    <div class='form-group'>
+      <div class="name_start">
         <%= f.search_field :name_start, class: 'form-control', placeholder: 'Book' %>
       </div>
     </div>
-    <div class='form-group row'>
-      <label class="col-sm-1 form-control-label">Professor</label>
-      <div class='col-sm-6'>
+    <div class='form-group'>
+      <div class='prof_name_start'>
         <%= f.search_field :prof_name_start, class: 'form-control', placeholder: 'Professor' %>
       </div>
     </div>
-    <div class='form-group row'>
-      <label class="col-sm-1 form-control-label">Class</label>
-      <div class='col-sm-6'>
+    <div class='form-group'>
+      <div class='class_name_start'>
         <%= f.search_field :class_name_start, class: 'form-control', placeholder: 'Class' %>
       </div>
     </div>
 
-    <div class='form-group row'>
-        <div class='col-sm-12'>
-          <%= f.submit 'search', class: 'btn btn-default' %>
-        </div>
+    <div class='form-group'>
+      <div class='search_button'>
+        <%= f.submit 'search', class: 'btn btn-default' %>
+      </div>
     </div>
-
-  </form>
 <% end %>

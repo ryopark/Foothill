@@ -20,6 +20,18 @@
 @import 'settings';
 @import 'font-awesome';
 
+.form-group {
+  .form-control {
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .btn {
+    padding: 10px;
+    width: 50%;
+  }
+}
+
 .gallery_box {
   list-style: none;
   margin-top: 50px;
@@ -157,6 +169,7 @@ dl {
 }
 
 .top_title {
+  font-size: 25px;
   margin-left: 10px;
 
   a {
@@ -223,8 +236,8 @@ z-index: 1;
 /* button to open and close */
 .side-menu-btn {
 position: absolute;
-top: 0px;
-right: 20px;
+top: -10px;
+right: 30px;
 width: 40px;
 height: 40px;
 padding: 5px;
@@ -269,8 +282,8 @@ header {
 
   .signup_path {
     position: absolute;
-    top: 10px;
-    right: 90px;
+    top: 0px;
+    right: 15px;
 
     a {
       color: #ff5a5f;
