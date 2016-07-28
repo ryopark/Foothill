@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name='viewport' content='width=device-width, initial-scale=1 user-scalable=no'>
-  <title>Foothill</title>
+  <title>TextsMedium</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -33,7 +33,7 @@ $(function () {
   <% end %>
  <div class='wrapper'>
     <header>
-      <h1 class='top_title text-left'><%= link_to 'Top', root_path %></h1>
+      <h1 class='top_title text-left'><%= link_to 'TextsMedium', root_path %></h1>
       <% if !user_signed_in? %>
         <div class='signup_path text-left'>
           <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default' %>
