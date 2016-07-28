@@ -82,19 +82,19 @@
   margin-top: 150px;
   display: block;
   margin-bottom: 150px;
-  margin-left: 35px;
-  width: 90%;
+  width: 100%;
 
   li {
-    width: 45%;
+    width: 20%;
     display: inline-block;
-    padding: 0;
+    padding: 10px;
     border: 0;
     margin-bottom: 100px;
 
+
     .gallery_img {
-      height: 80%;
-      width: 80%;
+      height: 100%;
+      width: 100%;
       border-radius: 3px;
     }
 
@@ -105,9 +105,6 @@
       position: relative;
 
       .book_name {
-        position: absolute;
-        top: 5px;
-        left: 10%;
         font-size: 20px;
         margin-bottom: 25px;
       }
@@ -115,20 +112,20 @@
       .price {
         position: absolute;
         top: -60px;
-        left: 10%;
+        left: 0;
         font-size: 22px;
         background-color: rgba(60,63,64,0.9);
         background-size: 40%;
         color: #fff;
         font-size: 30px;
-        width: 50%;
+        width: 60%;
       }
 
       .owner_image {
         border-radius: 33px;
         position: absolute;
-        top: -15px;
-        right: 20px;
+        top: -20px;
+        right: 5%;
       }
     }
   }
