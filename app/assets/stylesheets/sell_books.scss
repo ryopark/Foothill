@@ -9,6 +9,7 @@
   width: 100%;
   color: $dark_gray;
   padding-bottom: 70px;
+  overflow: hidden;
 
   .forecast_info {
     margin-left: 10px;
@@ -62,6 +63,7 @@
 }
 
 .book {
+  overflow: hidden;
   margin-top: 40px;
   margin-bottom: 30px;
   padding-bottom: 60px;
