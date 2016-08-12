@@ -1,3 +1,5 @@
+# userが本をfavしておけるためのfavoirte機能。ユーザーは何個でも本を保存できるので1:多の関係で
+# 成り立っている。
 module Users
   class FavoritesController < ApplicationController
     before_action :authenticate_user!
