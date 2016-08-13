@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
-
+  # Acts as votable と Omni Gem の使用
   def create
     @book = SellBook.find(params[:sell_book_id])
     @book.liked_by current_user
