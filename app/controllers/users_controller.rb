@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def show
   end
 
+
+  # message関連は実装をやめたので現在使われてない。
   def requested_book
     @messages = MessageGroup.requested(current_user)
   end
