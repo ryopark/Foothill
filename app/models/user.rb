@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   has_one :photo, as: :imageable
 
   validates :email, presence: true
-  VALID_FACEBOOK_URL = /\A(https:\/\/www.facebook.com\/)/
-  validates :facebook_url, format: {with: VALID_FACEBOOK_URL}
+  # errorがでる
+  # VALID_FACEBOOK_URL = /\A(https:\/\/www.facebook.com\/)/
+  # validates :facebook_url, format: {with: VALID_FACEBOOK_URL}
 
   acts_as_voter
 
