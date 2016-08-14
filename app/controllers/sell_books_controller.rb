@@ -4,6 +4,8 @@ class SellBooksController < ApplicationController
   before_action :check_user_school
 
   def index
+    # get sellbookすべてを取得
+    # get Userのイメージを取得する(User.photo)
     @q = SellBook.is_active.search(params[:q])
     @books = @q.result(distinct: true)
   end
