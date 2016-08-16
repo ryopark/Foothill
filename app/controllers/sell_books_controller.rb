@@ -8,7 +8,7 @@ class SellBooksController < ApplicationController
     # get DefaultでSellBookのactive_flagがTrueの本をすべて一覧
     # get Userの写真（右上のメニューボタン）を取得する(current_user.photo.image.url)
 
-    # 検索
+    # 検索 use ransack
     # GET "/sell_books?utf8=%E2%9C%93&q%5Bname_start%prof_name_start%5D=
     # class_name_start%5D=music&commit=search" {"utf8"=>"✓", "q"=>{"name_start"=>"",
     # "prof_name_start"=>"", "class_name_start"=>"music"}, "commit"=>"search"}
