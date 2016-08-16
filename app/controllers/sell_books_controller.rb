@@ -7,6 +7,11 @@ class SellBooksController < ApplicationController
     #root page(ヘッダーにsign_up menu bottun)
     # get DefaultでSellBookのactive_flagがTrueの本をすべて一覧
     # get Userの写真（右上のメニューボタン）を取得する(current_user.photo.image.url)
+
+    # 検索
+    # GET "/sell_books?utf8=%E2%9C%93&q%5Bname_start%prof_name_start%5D=
+    # class_name_start%5D=music&commit=search" {"utf8"=>"✓", "q"=>{"name_start"=>"",
+    # "prof_name_start"=>"", "class_name_start"=>"music"}, "commit"=>"search"}
     @q = SellBook.is_active.search(params[:q])
     @books = @q.result(distinct: true)
   end
@@ -24,7 +29,8 @@ class SellBooksController < ApplicationController
     if current_user.facebook_url == "" || current_user.facebook_url == nil
       redirect_to edit_user_registration_path(current_user.id), notice: 'Please add Facebook_url before selling book!'
     else
-    # GET Sell_books/new
+    # type: 'Get',
+    # url: '/sell_books/new
     #   id: nil,
     #   name: "",
     #   prof_name: "",
