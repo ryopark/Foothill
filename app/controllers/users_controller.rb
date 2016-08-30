@@ -9,11 +9,11 @@ class UsersController < ApplicationController
 
 
   # message関連は実装をやめたので現在使われてない。
-  def requested_book
+  def requested_books
     @messages = MessageGroup.requested(current_user)
   end
 
-  def selling_book
+  def selling_books
     @messages = MessageGroup.selling(current_user)
     @books = current_user.sell_books.is_active
   end

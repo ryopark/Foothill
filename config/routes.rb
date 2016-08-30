@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get :requested_book
-      get :selling_book
+      get :requested_books
+      get :selling_books
     end
     resources :favorites, only: :index, controller: 'users/favorites'
   end
