@@ -29,7 +29,13 @@ $(function () {
         <li class='list-group-item'><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'link' %></li>
       </ul>
      </nav>
-  <div class='side-menu-btn' id='js__sideMenuBtn'><%= image_tag current_user.photo.image.url, class: 'user_image' %></div>
+     <% if current_user.photo == nil %>
+     <div class='side-menu-btn' id='js__sideMenuBtn'>
+       <div class='glyphicon glyphicon-user'></div>
+     </div>
+     <% else %>
+      <div class='side-menu-btn' id='js__sideMenuBtn'><%= image_tag current_user.photo.image.url,class: 'user_image' %></div>
+     <% end %>
   <% end %>
  <div class='wrapper'>
     <header>
