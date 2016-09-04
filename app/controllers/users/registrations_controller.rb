@@ -1,3 +1,4 @@
+## Deviseは本来、パスワードを要求しないとログインはできないので、継承してrewriteしてる。
 class Users::RegistrationsController < Devise::RegistrationsController
 before_filter :configure_account_update_params, only: [:update]
 
