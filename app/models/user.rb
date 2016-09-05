@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   has_many :sell_book_comments, dependent: :destroy
   has_one :photo, as: :imageable
 
-  validates :email, presence: true
+  #validateしたいけどしたらfacebookloginで外された時にログインできなくなる。
+  # validates :email, presence: true
   # errorがでる
   # VALID_FACEBOOK_URL = /\A(https:\/\/www.facebook.com\/)/
   # validates :facebook_url, format: {with: VALID_FACEBOOK_URL}
