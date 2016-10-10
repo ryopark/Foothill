@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709193421) do
+ActiveRecord::Schema.define(version: 20161010003221) do
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string   "access_token"
+    t.datetime "expires_at"
+    t.integer  "user_id"
+    t.boolean  "active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title",        null: false
+    t.string   "author",       null: false
+    t.integer  "isbn",         null: false
+    t.integer  "amazon_price", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.integer  "book_id",    null: false
+    t.integer  "seller_id",  null: false
+    t.integer  "price",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "message_groups", force: :cascade do |t|
     t.integer  "sell_book_id", null: false
