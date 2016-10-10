@@ -75,10 +75,10 @@ var NavDropdown = function (_React$Component) {
       return true;
     }
 
-    if (props.children) {
-      return _ValidComponentChildren2['default'].some(props.children, function (child) {
-        return _this2.isActive(child, activeKey, activeHref);
-      });
+    if (_ValidComponentChildren2['default'].some(props.children, function (child) {
+      return _this2.isActive(child, activeKey, activeHref);
+    })) {
+      return true;
     }
 
     return props.active;

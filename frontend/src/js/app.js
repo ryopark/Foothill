@@ -3,6 +3,10 @@ import { render } from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 import { Provider } from 'react-redux'
 
+import Auth from './components/auth'
+import Common from './components/common'
+import TopPage from './components/top-page'
+
 import createFinalStore from './store'
 
 const store = createFinalStore()
@@ -12,8 +16,12 @@ const store = createFinalStore()
 :::::::::::::::::::::::::::::::::::*/
 render(	
 	<Provider store={store}>
-		<Router history={hashHistory}>
-		</Router>
+		<Route component={Common}>
+			<Route path='/' component={TopPage} />
+			<Route component={Auth}>
+				<Route path='/dressr' component={DresserPage} />
+			</Route>
+		</Route>
 	</Provider>,
 	document.getElementById('root')
 )
