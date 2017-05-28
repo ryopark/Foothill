@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                                    registrations: 'users/registrations'}
+                                    registrations: 'users/registrations',
+                                    sessions: 'users/sessions'}
   # devise_scope :user do
   #   get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
   #   get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
@@ -22,5 +23,8 @@ Rails.application.routes.draw do
   resources :messages, only: :create
   resources :favorites, only: :create do
     post :remove, on: :collection
+  end
+  resources :books, shallow: true, except: [:new] do
+    resources :deals, except: [:new]
   end
 end
